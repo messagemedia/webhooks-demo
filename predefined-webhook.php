@@ -18,7 +18,7 @@ $bodyValue = '{
       {
          "content":"Predefined Webhooks demo",
          "destination_number":"' . MY_PHONE . '",
-         "callback_url": "' . NGROK_URL . '"
+         "callback_url": "' . NGROK_URL . '/webhooks-demo/index.php"
       }
    ]
 }';

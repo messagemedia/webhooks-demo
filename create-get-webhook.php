@@ -10,7 +10,7 @@ $client = new MessageMediaWebhooksLib\MessageMediaWebhooksClient($basicAuthUserN
 $webhooks = $client->getWebhooks();
 
 $body = new MessageMediaWebhooksLib\Models\CreateWebhookRequest();
-$body->url = NGROK_URL . '?contentOriginal=$mtContent&contentReply=$moContent&addressRecipeint=$destinationAddress&addressSender=$sourceAddress';
+$body->url = NGROK_URL . '/webhooks-demo/index.php?contentOriginal=$mtContent&contentReply=$moContent&addressRecipeint=$destinationAddress&addressSender=$sourceAddress';
 $body->method = "GET";
 $body->encoding = "JSON";
 $body->headers = array("X-Custom-Header" => "Hello world!");

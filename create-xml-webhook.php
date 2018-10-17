@@ -10,7 +10,7 @@ $client = new MessageMediaWebhooksLib\MessageMediaWebhooksClient($basicAuthUserN
 $webhooks = $client->getWebhooks();
 
 $body = new MessageMediaWebhooksLib\Models\CreateWebhookRequest();
-$body->url = NGROK_URL;
+$body->url = NGROK_URL . '/webhooks-demo/index.php';
 $body->method = "POST";
 $body->encoding = "XML";
 $body->headers = array("X-Custom-Header" => "Hello world!");
