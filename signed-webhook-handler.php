@@ -18,10 +18,12 @@
   $ok = openssl_verify($data, $signature, $publicKey, OPENSSL_ALGO_SHA224);
   if ($ok == 1) {
       echo "Verification Successful";
+      @mkdir('good-requests/');
       file_put_contents('good-requests/' . uniqid(), $data);
       http_response_code (200);
   } elseif ($ok == 0) {
       echo "Verification Failed";
+      @mkdir('bad-requests/');
       file_put_contents('bad-requests/' . uniqid(), $data);
       http_response_code (401);
   } else {

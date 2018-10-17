@@ -1,5 +1,7 @@
 composer.phar
 /vendor/
+/bad-requests/
+/good-requests/
 composer.lock
 signing-key.pem
 config.php
