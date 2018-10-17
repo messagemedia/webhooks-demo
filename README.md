@@ -3,17 +3,17 @@ This library contains a set of scripts to demonstrate the use of MessageMedia's 
 
 ## Setup
 
-Firstly, copy the ```example_config.php``` file to ```config.php``` and update constants in that file with your MessageMedia API Key, API Secret, the phone number you wish to use for the purpose of testing your Webhooks and a base URL for which all Webhooks should be configured to point to. This library assumes you are using Ngrok to tunnel requests to your local installation of this library, hence the name of the constant, however if this code is checked out on a publicly accessible machine then you can use that URL within this configuration file.
+Firstly, copy the `example_config.php` file to `config.php` and update constants in that file with your MessageMedia API Key, API Secret, the phone number you wish to use for the purpose of testing your Webhooks and a base URL for which all Webhooks should be configured to point to. This library assumes you are using Ngrok to tunnel requests to your local installation of this library, hence the name of the constant, however if this code is checked out on a publicly accessible machine then you can use that URL within this configuration file.
 
-If you are using Ngrok, be sure to setup your tunnel using ```ngrok http 80``` and then update the ```config.php``` file with your Ngrok URL.
+If you are using Ngrok, be sure to setup your tunnel using `ngrok http 80` and then update the `config.php` file with your Ngrok URL.
 
-Run ```php composer install`` to install all the required dependencies, including the MessageMedia SDKs used in this demo.
+Run `php composer install` to install all the required dependencies, including the MessageMedia SDKs used in this demo.
 
 Note, this library should be checked out in your system where the files can be served by a running web server.
 
 ## Demonstration #1 - Use predefined Webhooks via the Messages API
 
-Run ```php predefined-webhook.php``` which will send a message to the configured phone number and use the Message APIs ```callback_url``` parameter to specify the URL to which Webhooks will be pushed to. Inspecting the Webhooks via the Ngrok Web Interface, normally http://localhost:4040. You should see two Webhooks received one for an ENROUTE delivery receipt and one for a SUBMITTED delivery receipt. If you reply to the message received on your phone, you should see a third Webhook with the details of the reply.
+Run `php predefined-webhook.php` which will send a message to the configured phone number and use the Message APIs `callback_url` parameter to specify the URL to which Webhooks will be pushed to. Inspecting the Webhooks via the Ngrok Web Interface, normally http://localhost:4040. You should see two Webhooks received one for an ENROUTE delivery receipt and one for a SUBMITTED delivery receipt. If you reply to the message received on your phone, you should see a third Webhook with the details of the reply.
 
 [For more information on the Messages API, check out the documentation](https://developers.messagemedia.com/code/messages-api-documentation/)
 
@@ -21,11 +21,11 @@ Run ```php predefined-webhook.php``` which will send a message to the configured
 
 To make this demo library nice and reusable, there is a script which will clear custom Webhooks from your account - use it carefully, it will delete all Webhooks that have been configured on your account - **don't** use this script on your production accounts!!!
 
-Now that you've been warned, run ```php clear-existing-webhooks.php``` to clean up any existing Webhooks on your account, type ```yes``` when prompted (case sensitive).
+Now that you've been warned, run `php clear-existing-webhooks.php` to clean up any existing Webhooks on your account, type `yes` when prompted (case sensitive).
 
 ### Custom JSON Webhook
 
-Next, run ```create-json-webhook.php``` to configure a Webhook on your account which will fire whenever a reply is received to any messages sent from your MessageMedia account. This Webhook will have the following structure:
+Next, run `create-json-webhook.php` to configure a Webhook on your account which will fire whenever a reply is received to any messages sent from your MessageMedia account. This Webhook will have the following structure:
 
 ```json
 {
