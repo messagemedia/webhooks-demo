@@ -1,0 +1,9 @@
+{
+    "name": "messagemedia/webhooks-demo",
+    "type": "project",
+    "require": {
+        "messagemedia/messages-sdk": "^1.1",
+        "messagemedia/webhooks-sdk": "^1.0",
+        "messagemedia/signingkeys-sdk": "^1.1"
+    }
+}
