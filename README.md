@@ -25,7 +25,7 @@ Now that you've been warned, run `php clear-existing-webhooks.php` to clean up a
 
 ### Custom JSON Webhook
 
-Next, run `create-json-webhook.php` to configure a Webhook on your account which will fire whenever a reply is received to any messages sent from your MessageMedia account. This Webhook will have the following structure:
+Next, run `php create-json-webhook.php` to configure a Webhook on your account which will fire whenever a reply is received to any messages sent from your MessageMedia account. This Webhook will have the following structure:
 
 ```json
 {
